@@ -50,32 +50,18 @@ class ViewController: UIViewController {
         
         
         if leftNumber > rightNumber {
-            
             leftScore += 1
-            
             leftScoreLabel.text = String(leftScore)
             
         } else if leftNumber == rightNumber {
             
-        //Tie
+            
             
         } else {
-            
             rightScore += 1
-            
             rightScoreLabel.text = String(rightScore)
             
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        }
-        
     }
+}
 
