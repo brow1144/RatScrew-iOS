@@ -11,4 +11,14 @@ Each player flips over a card and they then compare the cards to see which one i
 
 ## Future Rules
 
-Each player flips over a card and they then compare the cards to see which one is higher. If one player has a higher card they recieve their card back and also recieve the card played by the other player. For example, if player 1 plays a "King" and Player 2 plays a "Jack", player 1 will keep his "King" and also recieve the "Jack" to his deck since he won the round. In the case of a tie, both players play another card. If one is higher than the other, the winning player takes all the cards played in that round (Including the two cards from the tie). If another tie occurs repeat the process until one player plays a higher card. If 
+Each player flips over a card and they then compare the cards to see which one is higher. If one player has a higher card they recieve their card back and also recieve the card played by the other player. For example, if player 1 plays a "King" and Player 2 plays a "Jack", player 1 will keep his "King" and also recieve the "Jack" to his deck since he won the round. In the case of a tie, both players play another card. If one is higher than the other, the winning player takes all the cards played in that round (Including the two cards from the tie). If another tie occurs repeat the process until one player plays a higher card. Future Rules will be added.
+
+## Author 
+
+Kyle Brown
+
+If you have any questions, please email me at : 
+  brow1144@purdue.edu
+  
+
+
