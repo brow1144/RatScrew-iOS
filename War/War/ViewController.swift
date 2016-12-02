@@ -48,33 +48,48 @@ class ViewController: UIViewController {
         rightImageView.image = UIImage( named : cardNames[rightNumber] )
         
         
+        if leftNumber > rightNumber || rightNumber > leftNumber {
+        
+        if sender.currentTitle == "Break Tie!" {
+            sender.setImage(nil, for: .normal)
+            sender.setTitle(nil, for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "dealbutton"), for: .normal)
+            }
+        }
+
+        
         if leftNumber > rightNumber {
+            //If left wins : Increase Left Score. Update Both Scores
             leftScore += 1
             leftScoreLabel.text = String(leftScore)
             rightScoreLabel.text = String(rightScore)
             
         } else if leftNumber == rightNumber {
-            
-            //tie
+            //If tie : change deal button to "Break Tie in Times New Roman Size 25 Red.
+            sender.setImage(nil, for: .normal)
+            sender.setTitle("Break Tie!",for: .normal)
+            sender.titleLabel!.font = UIFont(name: "Times New Roman", size: 25)
+            sender.setTitleColor(UIColor.red, for: UIControlState.normal)
             
         } else {
+            //If right wins : Increase Left Score. Update Both Scores
             rightScore += 1
             rightScoreLabel.text = String(rightScore)
             leftScoreLabel.text = String(leftScore)
- 
         }
         
-        if rightScore >= 10 {
+        if rightScore >= 25 {
+            //If right wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
             sender.setTitle("Game Over!",for: .normal)
-            sender.titleLabel!.font = UIFont(name: "Times New Roman", size: 25)
+            sender.titleLabel!.font = UIFont(name: "Times New Roman", size: 30)
             sender.setTitleColor(UIColor.red, for: UIControlState.normal)
 
-
-
         }
-        if leftScore >= 10 {
+        
+        if leftScore >= 25 {
+            //If left wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
             sender.setTitle("Game Over!", for: .normal)
@@ -84,34 +99,5 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func breakTie(_ sender: UIButton) {
-        //Randomize left number 0-12
-        let leftNumber = Int( arc4random_uniform(13) )
-        
-        //Randomize right number 0 - 12
-        let rightNumber = Int( arc4random_uniform(13) )
-        
-        
-        leftImageView.image = UIImage( named : cardNames[leftNumber] )
-        rightImageView.image = UIImage( named : cardNames[rightNumber] )
-        
-        if leftNumber > rightNumber {
-            
-            leftScore += 2
-            leftScoreLabel.text = String("Won")
-            rightScoreLabel.text = String("Lost")
-            
-        } else if leftNumber == rightNumber {
-            
-            
-            
-        } else {
-            rightScore += 2
-            rightScoreLabel.text = String("Won")
-            leftScoreLabel.text = String("Lost")
-            
-        }
-    }
 }
 
