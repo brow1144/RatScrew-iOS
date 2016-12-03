@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var startNewGameButton: UIButton!
 
   
     @IBOutlet weak var leftImageView: UIImageView!
@@ -21,6 +23,8 @@ class ViewController: UIViewController {
     
     
     let cardNames = ["ace", "card2","card3","card4","card5","card6","card7","card8","card9", "card10","jack", "queen", "king"]
+    
+    let cardBack = ["back"]
     
 
     override func viewDidLoad() {
@@ -78,7 +82,7 @@ class ViewController: UIViewController {
             leftScoreLabel.text = String(leftScore)
         }
         
-        if rightScore >= 25 {
+        if rightScore >= 20 {
             //If right wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
@@ -88,7 +92,7 @@ class ViewController: UIViewController {
 
         }
         
-        if leftScore >= 25 {
+        if leftScore >= 20 {
             //If left wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
@@ -99,5 +103,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func startNewGame(_ sender: UIButton) {
+        
+        leftImageView.image = UIImage( named : cardBack[0] )
+        rightImageView.image = UIImage( named : cardBack[0] )
+        
+        leftScore = 0
+        rightScore = 0
+        
+        rightScoreLabel.text = String(rightScore)
+        leftScoreLabel.text = String(leftScore)
+        
+        
+    }
 }
 
