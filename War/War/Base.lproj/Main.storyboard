@@ -124,10 +124,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dealButton" destination="zhV-eE-pSL" id="YEm-4k-yeM"/>
                         <outlet property="leftImageView" destination="gM6-fK-uP3" id="wmb-56-Oml"/>
                         <outlet property="leftScoreLabel" destination="Tua-g0-XC6" id="Fhi-MA-Fjf"/>
                         <outlet property="rightImageView" destination="Uw1-Bw-xBC" id="zEP-dN-7TG"/>
                         <outlet property="rightScoreLabel" destination="qfs-ga-pYc" id="dMf-yW-msN"/>
+                        <outlet property="startNewGameButton" destination="UMr-fT-Tv8" id="HaO-Bk-nK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

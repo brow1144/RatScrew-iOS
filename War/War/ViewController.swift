@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var dealButton: UIButton!
     @IBOutlet weak var startNewGameButton: UIButton!
-
   
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var leftScoreLabel: UILabel!
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startNewGameButton.setTitle(nil, for: .normal)
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func dealTapped(_ sender: UIButton) {
-
+    
     
         //Randomize left number 0-12
         let leftNumber = Int( arc4random_uniform(13) )
@@ -82,24 +83,30 @@ class ViewController: UIViewController {
             leftScoreLabel.text = String(leftScore)
         }
         
-        if rightScore >= 20 {
+        if rightScore >= 10 {
             //If right wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
             sender.setTitle("Game Over!",for: .normal)
             sender.titleLabel!.font = UIFont(name: "Times New Roman", size: 30)
             sender.setTitleColor(UIColor.red, for: UIControlState.normal)
-
+            
+            startNewGameButton.setTitle("Start New Game", for: .normal)
+            startNewGameButton.isEnabled = true
+            
         }
         
-        if leftScore >= 20 {
+        if leftScore >= 10 {
             //If left wins game : change Deal button to "Game Over!" Times New Roman Size 30 Red
             sender.isEnabled = false
             sender.setImage(nil, for: .normal)
             sender.setTitle("Game Over!", for: .normal)
             sender.titleLabel!.font = UIFont(name: "Times New Roman", size: 25)
             sender.setTitleColor(UIColor.red, for: UIControlState.normal)
-
+            
+            startNewGameButton.setTitle("Start New Game", for: .normal)
+            startNewGameButton.isEnabled = true
+            
         }
     }
     
@@ -114,6 +121,14 @@ class ViewController: UIViewController {
         rightScoreLabel.text = String(rightScore)
         leftScoreLabel.text = String(leftScore)
         
+        dealButton.setTitle(nil, for: .normal)
+        dealButton.setImage(nil, for: .normal)
+        
+        dealButton.setImage(#imageLiteral(resourceName: "dealbutton"), for: .normal)
+        dealButton.isEnabled = true;
+        
+        startNewGameButton.setTitle(nil, for: .normal)
+        startNewGameButton.isEnabled = false
         
     }
 }
